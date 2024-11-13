@@ -25,12 +25,14 @@ public class ScatterPistol : MonoBehaviour
 
     public void StartScattering()
     {
+        AudioManager.instance.Play("Pistol");
         particles.Play();
         rayActivate = true;
     }
 
     public void StopScattering()
     {
+        AudioManager.instance.Stop("Pistol");
         particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         rayActivate = false;
     }
